@@ -424,7 +424,7 @@ Salah satu kontribusi terbesar sistem ini adalah kemampuan membedakan volatilita
 
 **B. Volatilitas Sehat (Filter: No Loss)**
 
-* Dengan menerapkan filter `CAGR >= 0`, kami mendapatkan daftar saham "_Trader's Paradise_".
+* Dengan menerapkan filter `CAGR >= 0`, telah didapatkan daftar saham dengan istilah "_Trader's Paradise_".
 
 * Saham seperti **Celsius Holdings** (Volatilitas 9.20%, CAGR +4.56%) dan **Carvana** (Volatilitas 7.58%, CAGR +41.42%) adalah contoh sempurna saham yang cocok untuk day trading. Mereka menawarkan fluktuasi harga harian yang lebar untuk ambil untung cepat, namun secara fundamental tren harganya masih positif (tidak sedang bangkrut).
 
