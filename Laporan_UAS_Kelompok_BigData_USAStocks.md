@@ -38,13 +38,30 @@ Adapun rumusan masalah dalam penelitian ini adalah sebagai berikut:
 4. Bagaimana memetakan saham ke dalam matriks _risk–reward_ berdasarkan hasil perhitungan volatilitas dan CAGR?
 
 ### 1.3 Tujuan
-Tujuan dari proyek ini adalah mengimplementasikan arsitektur **Hadoop MapReduce** untuk:
+Tujuan dari proyek ini adalah mengimplementasikan arsitektur Hadoop MapReduce untuk:
 
-* Melakukan _Data Cleaning_ otomatis terhadap jutaan baris data saham yang rusak/kosong.
+1. Mengimplementasikan proses _data cleaning_ secara terprogram untuk menangani data saham yang rusak atau tidak valid.
 
-* Menghitung indikator Volatilitas dan CAGR secara paralel.
+2. Menghitung indikator volatilitas saham secara paralel sebagai representasi tingkat risiko.
 
-* Menghasilkan _Business Intelligence_ berupa visualisasi kuadran investasi untuk pengambilan keputusan berbasis data.
+3. Menghitung nilai CAGR saham sebagai indikator rata-rata pertumbuhan tahunan.
+
+4. Menghasilkan informasi _business intelligence_ berupa pemetaan saham dalam kuadran investasi _risk–reward_ guna mendukung pengambilan keputusan berbasis data.
+
+### 1.4 Manfaat
+
+a. Manfaat Teoretis
+
+Penelitian ini diharapkan dapat menambah referensi akademik mengenai penerapan paradigma MapReduce dan Hadoop dalam pengolahan data _time-series_ berskala besar, khususnya pada analisis data pasar saham.
+
+b. Manfaat Praktis
+
+1. Bagi investor atau analis keuangan, penelitian ini dapat menjadi acuan dalam memahami profil risiko dan keuntungan saham secara lebih objektif.
+
+2. Bagi mahasiswa, penelitian ini memberikan pengalaman praktis dalam menerapkan konsep Big Data dan analitik menggunakan Hadoop MapReduce.
+
+3. Bagi pengembang sistem, penelitian ini dapat dijadikan contoh implementasi pemrosesan data finansial berskala besar secara terdistribusi.
+
 
 ## 2. Proses Penyelesaian dan Algoritma MapReduce
 
