@@ -25,15 +25,17 @@ Permasalahan utama dalam pengolahan dataset ini berkaitan erat dengan karakteris
 Untuk mengatasi permasalahan tersebut, diperlukan pendekatan komputasi terdistribusi yang mampu melakukan pembersihan data serta perhitungan indikator keuangan secara paralel dan terukur. Paradigma MapReduce yang diimplementasikan pada platform Hadoop menjadi solusi yang sesuai untuk memproses data saham berskala besar, sekaligus menghasilkan informasi yang relevan bagi pengambilan keputusan investasi berbasis data.
 
 ### 1.2 Rumusan Masalah
-Investor seringkali terjebak pada bias informasi dimana hanya melihat keuntungan (Growth) tanpa melihat risiko (Volatility), atau sebaliknya. Oleh karena itu, didefinisikan persoalan ini sebagai kebutuhan untuk **mengklasifikasikan profil risiko vs keuntungan** secara masif.
+Berdasarkan latar belakang yang telah diuraikan, investor seringkali mengalami bias informasi dengan hanya berfokus pada potensi keuntungan (_growth_) tanpa mempertimbangkan risiko (_risk_), atau sebaliknya. Oleh karena itu, diperlukan pendekatan analitik yang mampu memetakan profil risiko dan keuntungan saham secara komprehensif dan masif.
 
-Masalah yang akan diselesaikan dengan MapReduce adalah:
+Adapun rumusan masalah dalam penelitian ini adalah sebagai berikut:
 
-1. **Perhitungan Volatilitas Harian (Risk)**: Seberapa fluktuatif pergerakan harga saham setiap harinya?
+1. Bagaimana melakukan pembersihan data (_data cleaning_) secara otomatis terhadap data saham yang memiliki nilai tidak valid menggunakan pendekatan MapReduce?
 
-2. **Perhitungan CAGR (Compound Annual Growth Rate)**: Berapa rata-rata pertumbuhan tahunan saham tersebut sejak IPO hingga sekarang?
+2. Bagaimana menghitung volatilitas harian saham sebagai indikator risiko menggunakan MapReduce?
 
-3. **Matriks Risk-Reward**: Bagaimana memetakan 959 saham tersebut ke dalam kuadran investasi (misal: _Low Risk-High Growth vs High Risk-Negative Growth_)?
+3. Bagaimana menghitung _Compound Annual Growth Rate_ (CAGR) sebagai indikator pertumbuhan saham menggunakan MapReduce?
+
+4. Bagaimana memetakan saham ke dalam matriks _risk–reward_ berdasarkan hasil perhitungan volatilitas dan CAGR?
 
 ### 1.3 Tujuan
 Tujuan dari proyek ini adalah mengimplementasikan arsitektur **Hadoop MapReduce** untuk:
