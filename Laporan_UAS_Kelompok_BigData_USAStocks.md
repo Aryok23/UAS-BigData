@@ -16,15 +16,13 @@
 ## 1. Definisi Masalah
 
 ### 1.1 Latar Belakang
-Pasar saham menghasilkan data _time-series_ dalam volume besar setiap detiknya. Dalam studi kasus ini, digunakan dataset "USA Top 900+ Historic Stock Dataset" (Sumber Data: https://www.kaggle.com/datasets/anukaggle81/usa-top-900-historic-dataset) yang mencakup data perdagangan harian dari 959 perusahaan teratas di Amerika Serikat. Rentang data bervariasi secara signifikan, mulai dari perusahaan mapan (data sejak 1962) hingga perusahaan teknologi baru (data mulai 2020).
+Pasar saham merupakan salah satu sumber data _time-series_ yang menghasilkan data dalam volume sangat besar dan terus bertambah setiap hari. Setiap aktivitas perdagangan saham menghasilkan data harga pembukaan (_open_), harga tertinggi (_high_), harga terendah (_low_), harga penutupan (_close_), serta volume transaksi yang tersimpan secara historis dalam jangka waktu panjang. Karakteristik tersebut menjadikan data pasar saham sebagai salah satu contoh nyata penerapan Big Data.
 
-Permasalahan utama yang dihadapi dalam analisis ini mencakup aspek **3V (Volume, Variety, Veracity)**:
+Pada penelitian ini digunakan dataset “USA Top 900+ Historic Stock Dataset” (Sumber Data: kaggle.com, 2025) , yang mencakup data perdagangan harian dari 959 perusahaan teratas di Amerika Serikat. Dataset ini terdiri dari hampir 1.000 berkas terpisah, di mana setiap berkas merepresentasikan satu perusahaan. Rentang waktu data sangat bervariasi, mulai dari perusahaan mapan dengan data sejak tahun 1962 hingga perusahaan teknologi yang baru tercatat dengan data sejak tahun 2020.
 
-1. **Volume & Scalability**: Dataset terdiri dari hampir 1.000 file terpisah dengan jutaan baris data historis. Melakukan perhitungan manual (seperti membuka satu per satu di Excel) untuk menghitung rata-rata volatilitas puluhan tahun sangat tidak efisien dan rentan crash.
+Permasalahan utama dalam pengolahan dataset ini berkaitan erat dengan karakteristik Big Data yang dikenal sebagai 3V, yaitu _Volume_, _Variety_, dan _Veracity_. Dari sisi _volume_, dataset memiliki jutaan baris data historis sehingga pengolahan secara manual atau menggunakan perangkat lunak konvensional seperti spreadsheet menjadi tidak efisien dan berisiko mengalami kegagalan sistem. Dari sisi _variety_, perbedaan rentang waktu antar perusahaan menyebabkan kesulitan dalam melakukan perbandingan performa saham secara adil (_apple-to-apple compariso_n) jika hanya menggunakan metode statistik sederhana. Sementara itu, dari sisi _veracity_, ditemukan berbagai permasalahan kualitas data seperti nilai harga pembukaan bernilai nol pada data lama serta anomali harga di mana nilai _high_ lebih kecil daripada _low_.
 
-2. **Variety (Struktur Data)**: Setiap file memiliki rentang waktu berbeda (4 tahun vs 60 tahun). Hal ini menyulitkan perbandingan performa (_apple-to-apple_) jika hanya menggunakan metode statistik sederhana.
-
-3. **Veracity (Kualitas Data)**: Ditemukan banyak noise atau data tidak valid, seperti nilai `Open Price = 0.0` pada data tahun lama (1960-an), atau anomali di mana `High Price < Low Price`. Pembersihan data (_Data Cleaning_) harus dilakukan secara terprogram di level _row-by-row_.
+Untuk mengatasi permasalahan tersebut, diperlukan pendekatan komputasi terdistribusi yang mampu melakukan pembersihan data serta perhitungan indikator keuangan secara paralel dan terukur. Paradigma MapReduce yang diimplementasikan pada platform Hadoop menjadi solusi yang sesuai untuk memproses data saham berskala besar, sekaligus menghasilkan informasi yang relevan bagi pengambilan keputusan investasi berbasis data.
 
 ### 1.2 Rumusan Masalah
 Investor seringkali terjebak pada bias informasi dimana hanya melihat keuntungan (Growth) tanpa melihat risiko (Volatility), atau sebaliknya. Oleh karena itu, didefinisikan persoalan ini sebagai kebutuhan untuk **mengklasifikasikan profil risiko vs keuntungan** secara masif.
