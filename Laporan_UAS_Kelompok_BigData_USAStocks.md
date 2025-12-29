@@ -71,6 +71,7 @@ Dirancang solusi menggunakan paradigma **MapReduce**, di mana komputasi didistri
 
 Berikut adalah arsitektur aliran data dalam sistem yang dibangun:
 
+```mermaid
 graph TD
     Input[Input Dataset: /data/input_data/] -->|959 CSV Files| Split[Input Split]
     Split --> M1[Mapper Node]
@@ -79,7 +80,7 @@ graph TD
     M1 -->|Read Row| Clean{Validasi Data}
     Clean -- Invalid/Corrupt --> Skip[Drop Row]
     Clean -- Valid --> Calc1[Hitung Volatilitas Harian]
-    Calc1 --> Emit1[Emit: <Symbol, (Date, Close, Volatility)>]
+    Calc1 --> Emit1["Emit: <Symbol, (Date, Close, Volatility)>"]
     end
     
     Emit1 --> S{Shuffle & Sort by Symbol}
@@ -88,12 +89,13 @@ graph TD
     S --> R1[Reducer Node]
     R1 -->|Iterasi per Simbol| Agg[Akumulasi Volatilitas]
     R1 -->|Cek Tanggal| Time[Cari Start_Date & End_Date]
-    Time --> Calc2[Hitung CAGR (Growth Tahunan)]
+    Time --> Calc2["Hitung CAGR (Growth Tahunan)"]
     Calc2 --> Label[Labeling: Risk vs Reward]
-    Label --> Output[Output: <Symbol, Volatility, CAGR, Label>]
+    Label --> Output["Output: <Symbol, Volatility, CAGR, Label>"]
     end
     
-    Output --> Vis[Visualisasi Python (Pandas/Seaborn)]
+    Output --> Vis["Visualisasi Python (Pandas/Seaborn)"]
+```
 
 ### 2.2 Algoritma dan Pseudocode
 
