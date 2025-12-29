@@ -5,11 +5,11 @@
 **Topik**: Analisis Top 900+ USA Stocks menggunakan Hadoop MapReduce
 
 **Anggota Kelompok**:
-1. x
-2. x
-3. x
-4. x
-5. x
+1. Salwa Nayla Adistri    (22/493200/TK/54017)
+2. Lana Fitria Dewani     (22/494292/TK/54203) 
+3. Raden Aryo Bismo N     (22/494473/TK/54233)
+4. Ovie Khaira Zayyan     (25/494801/TK/54315) 
+5. Timotius Kristafael H  (22/494980/TK/54357) 
 
 ---
 
